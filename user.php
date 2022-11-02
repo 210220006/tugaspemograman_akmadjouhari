@@ -1,68 +1,44 @@
-<! DOCTYPE html>
 <html>
-<html>
-<title>Indehoy</title>
-</head>
-<?php
-//koneksi database
-include "koneksi.php";
-if(!empty($_POST['save'])){
-	$Nama = $_POST['Nama'];
-	$Password = $_POST['Password'];
-$level = $_POST['level'];
-$status = $_POST['status'];
-$a=mysqli_query($koneksi,"insert into user values('','$Nama','$Password','$level','$status')");
-if ($a){
-header("location:tampilan_user.php");
-}else{
-	echo mysqli_error();
-}
-}
-$querykategori = "SELECT * FROM kategori";
-$resultkategori = mysqli_query($koneksi,$querykategori);
-?>
-<body>
-<h2>Indehoy<h/2>
-<br/>
-<a href="tampiluser.php">KEMBALI<a/>
-<br/>
-<br/>
-<h3>TAMBAH DATA USER</h3>
-<form method="POST">
-	<table>
-	<tr>
-	<td>Nama</td>
-	<td><input type="text" Name="Nama"></td>
-	</tr>
-	<tr>
-	<td>Password</td>
-	<td><input type="Password" Name="Password"></td>
-	</tr>
-	<tr>
-	<td>level</td>
-	<td><select name="level">
-	<option value="">-----Pilih</option>
-	<option value="1">Admin</option>
-	<option value="2">Staf</option>
-	<option value="3">Spv</option>
-	<option value="4">mgr</option>
-	</select>
-	<td>
-	</tr>
-	<tr>
-	<td>status</td>
-	<td><select name="status">
-	<option value ="">-----Pilih</option>
-	<option value="1">Aktif</option>
-	<option value ="0">Tdk aktf</option>
-	</select>
-	</td>
-	</tr>
-	<tr>
-	<td></td>
-	<td><input type="submit" name="save"><td>
-	</tr>
-	</table>
-	</form>
+	<head>
+		<title>INDEHOY</title>
+	</head>
+	<body>
+		<h2>MODULE USER</h2>
+		<br/>
+		<a href="tambah_user.php">+ TAMBAH USER</a>
+		<br/>
+		<table border="1">
+			<tr>
+				<th>No</th>
+				<th>Nama</th>
+				<th>Password</th>
+				<th>Level</th>
+				<th>Status</th>
+				<th>OPSI</th>
+			</tr>
+			<?php
+				include 'koneksi.php';
+				$no = 1;
+				$query = mysqli_query($koneksi,"SELECT * FROM user
+												LEFT JOIN level on level.id_level = user.level 
+									");
+				while($data = mysqli_fetch_array($query))
+				{
+			?>
+			<tr>
+				<td><?php echo $no++;?></td>
+				<td><?php echo $data['nama']; ?></td>
+				<td><?php echo $data['password']; ?></td>
+				<td><?php echo $data['nama_level']; ?></td>
+				<td><?php echo $data['status']; ?></td>
+				<td>
+					<a href="edit_user.php?id=<?php echo $data['id']; ?>">EDIT</a>
+					<a href="hapus_user.php?id=<?php echo $data['id']; ?>">HAPUS</a>
+				</td>
+			</tr>
+			<?php
+				}
+			?>
+		</table>
 	</body>
-	</html>
+</html>

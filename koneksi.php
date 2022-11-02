@@ -1,11 +1,11 @@
 <?php
 $koneksi = mysqli_connect("localhost","root","","keuangan");
 
-// check connection
-if (mysqli_connect_errno()) {
-    echo "koneksi database gagal : " . mysqli_connect_error();
+// Check connection
+if (mysqli_connect_errno()){
+	echo "Koneksi database gagal : " . mysqli_connect_error();
 }else{
-    echo "Rawr Bisa Konek";
+	echo "URRA BISA KONEK RAWR";
 }
 
 ?>
