@@ -1,7 +1,7 @@
 <! DOCTYPE html>
 <html>
 <html>
-<title>Indehoy</title>
+<title>Indehoy.com</title>
 </head>
 <?php
 //koneksi database
@@ -12,9 +12,9 @@ $no_transaksi = $_POST['no_transaksi'];
 $jenis_transaksi = $_POST['jenis_transaksi'];
 $barang_id = $_POST['barang_id'];
 $jumlah_transaksi = $_POST['jumlah_transaksi'];
-$member_id = $_POST['member_id'];
-
-$a=mysqli_query($koneksi,"insert into transaksi values('','$tgl_transaksi','$no_transaksi','$jenis_transaksi','$barang_id','$jumlah_transaksi','$member_id')");
+$user_id = $_POST['user_id'];
+$member = $_POST['member']
+$a=mysqli_query($koneksi,"insert into transaksi values('','$tgl_transaksi','$no_transaksi','$jenis_transaksi','$barang_id','$jumlah_transaksi','$user_id','$member')");
 if ($a)
 {
 header("location:tampilan_transaksi.php");
@@ -33,9 +33,9 @@ $resultuser = mysqli_query($koneksi,$queryuser);
 
 ?>
 <body>
-<h2>Indehoy<h/2>
+<h2>Indehoy.com<h/2>
 <br/>
-<a href="tampilan_transaksi.php">KEMBALI<a/>
+<a href="tampilan_member.php">KEMBALI<a/>
 <br/>
 <br/>
 <h3>TAMBAHKAN DATA TRANSAKSI</h3>
@@ -76,8 +76,8 @@ $resultuser = mysqli_query($koneksi,$queryuser);
 	<td><input type="number" name="jumlah_transaksi"></td>
 	</tr>
 	<tr>
-	<td>Member</td>
-	<td><select name="member_id">
+	<td>User</td>
+	<td><select name="user_id">
 	<option value="">---Pilih---</option>
 	<?php
 	while ($datauser=mysqli_fetch_array($resultuser))
@@ -88,10 +88,39 @@ $resultuser = mysqli_query($koneksi,$queryuser);
 	</select>
 	</td>
 	</tr>
-	<tr>
+    <tr>
 	<td></td>
 	<td><input type="submit" name="save"><td>
 	</tr>
+    <br>
+    <table border="1" width="70%">
+    <tr>
+                <th style="background-color:dimgray; color:white; width:10px;">tgl_transaksi</th>
+                <th style="background-color:dimgray; color:white; width:10px;">no_transaksi</th>
+                <th style="background-color:dimgray; color:white; width:10px;">jenis_transaksi</th>
+                <th style="background-color:dimgray; color:white; width:10px;">barang_id</th>
+                <th style="background-color:dimgray; color:white; width:10px;">jumlah_transaksi</th>
+                <th style="background-color:dimgray; color:white; width:10px;">user_id</th>
+				<th style="background-color:dimgray; color:white; width:10px;">member</th>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+				<td>-</td>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+				<td>-</td>
+            </tr>
 	</table>
 	</form>
 	</body>
