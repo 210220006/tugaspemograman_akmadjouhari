@@ -7,7 +7,7 @@
 				background-size:cover;
 			}
 			</style>
-		<title>INDEHOY</title>
+		<title>INDEHOY~JOU~</title>
 	</head>
 	<body>
 		<h2>INDEHOY STORE</h2>

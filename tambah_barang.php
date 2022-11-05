@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title> INDEHOY </title>
+	<style>
+			html{
+				background:url('img/jou46.jpg');
+				background-repeat:no-repeat;
+				background-size:cover;
+			}
+			</style>
+		<title> INDEHOY~JOU~</title>
 	</head>
 
 	<?php
@@ -34,7 +41,7 @@
 	<body>
 		<h2>INDEHOY STORE</h2>
 		<br/>
-		<a href="index.php">KEMBALI</a>
+		<a href="barang.php">KEMBALI</a>
 		<br/>
 		<br/>
 		<h3>TAMBAH DATA BARANG</h3>

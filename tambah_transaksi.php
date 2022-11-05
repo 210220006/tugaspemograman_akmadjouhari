@@ -8,7 +8,7 @@
 				background-size:cover;
 			}
 			</style>
-		<title>INDEHOY</title>
+		<title>INDEHOY~JOU~</title>
 	</head>
 
 	<?php
@@ -52,7 +52,7 @@
 	<body>
 		<h2>INDEHOY STORE</h2>
 		<br/>
-		<a href="index.php">KEMBALI</a>
+		<a href="transaksi.php">KEMBALI</a>
 		<br/>
 		<br/>
 		<h3>TAMBAH DATA TRANSAKSI</h3>

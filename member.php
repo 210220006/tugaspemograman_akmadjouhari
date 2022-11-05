@@ -1,6 +1,13 @@
 <html>
 	<head>
-		<title>INDEHOY</title>
+	<style>
+			html{
+				background:url('img/jou46.jpg');
+				background-repeat:no-repeat;
+				background-size:cover;
+			}
+			</style>
+		<title>INDEHOY~JOU~</title>
 	</head>
 	<body>
 		<h2>INDEHOY STORE</h2>
